@@ -8,9 +8,11 @@ module.exports = function (app) {
         );
         next();
     });
-
+    app.get("/", productController.index)
     app.get("/product", productController.index)
     app.get('/view/:view_id', productController.find);
+    app.get('/views/:data_id',productController.getviews)
+    app.post('/view',productController.add)
 
 
 };
